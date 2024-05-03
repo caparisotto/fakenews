@@ -76,17 +76,17 @@ WSGI_APPLICATION = 'universidade.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
+#DATABASES = {
+ #   "default": {
+   #     "ENGINE": "django.db.backends.postgresql_psycopg2",
 #        "OPTIONS": {"options": "-c search_path=public"},
-        "NAME": "fakenews",
-        "USER": "python01",
-        "PASSWORD": "PY&2345db21deset_",
-        "HOST": "127.0.0.1",
-        "PORT": "5432",
-    },
-}
+   #     "NAME": "",
+    #    "USER": "",
+  #      "PASSWORD": "",
+   #     "HOST": "127.0.0.1",
+    #    "PORT": "5432",
+   # },
+#}
 
 
 
