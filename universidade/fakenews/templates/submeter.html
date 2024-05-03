@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block corpo %}
+
+
+
+<div class="container pt-5 border">
+
+<strong><p>Reforçamos que dependendo da expressão, a busca pode demorar até 1 minuto.</p></strong>
+    {% if form %}
+    {{ form.media }}
+    {% endif %}
+
+<form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+	<br>
+	<br>
+        <button type="submit" class="btn btn-primary">Submeter</button>
+</form>
+
+<h3>{{ erro }}</h3>
+
+</div>
+
+{% endblock %}

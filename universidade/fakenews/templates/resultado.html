@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+
+{% block corpo %}
+
+  <div class="container mt-3 p-3 rounded">
+  <table class="table table-condensed">
+    <tbody>
+      <tr class="table-inactive">
+	<th> {% for a in itens  %}
+		<strong> <p class={{ a.1 }}> {{ a.0 }} </p> </strong>
+	 {% endfor %} 
+	</th>
+      </tr>
+    </tbody>
+  </table>
+ </div>
+
+  <div class="container mt-3 p-3 rounded">
+  <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#ModalLinks">    Links Retornados pelo Google ao buscar o texto  </button>
+  <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#ModalFrase">    Texto Pequisado   </button>
+  <a type="button" class="btn btn-light" href="javascript:history.back()">Retornar </a>
+  </div>
+
+<div class="modal" id="ModalLinks">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+	{% for b in urls  %}
+		<p> {{ b }} </p>
+	 {% endfor %} 
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="ModalFrase">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+	{{ frase }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container mt-3 rounded">
+	  <p> <strong> Legenda: </strong> </p>
+  	<p class="badge bg-success">Informação confiável</p>
+  	<p class="badge bg-secondary">Ponto de atenção</p>
+  	<p class="badge bg-warning">Possível fake news </p> 
+  	<p class="badge bg-danger">Alto risco de fake news</p>
+
+	<p><i>*Reforçamos que essa aplicação não está confirmando a informação em si, apenas analisando pontos que são comuns em fake news.</i></p>
+   </div>
+
+
+
+{% endblock %}
